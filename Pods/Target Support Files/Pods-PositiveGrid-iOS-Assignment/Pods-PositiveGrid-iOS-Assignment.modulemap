@@ -1,0 +1,6 @@
+framework module Pods_PositiveGrid_iOS_Assignment {
+  umbrella header "Pods-PositiveGrid-iOS-Assignment-umbrella.h"
+
+  export *
+  module * { export * }
+}
