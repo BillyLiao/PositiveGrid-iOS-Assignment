@@ -1,0 +1,6 @@
+framework module Novocaine {
+  umbrella header "Novocaine-umbrella.h"
+
+  export *
+  module * { export * }
+}
