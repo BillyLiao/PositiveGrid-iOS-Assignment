@@ -11,11 +11,7 @@ import Bond
 import ReactiveKit
 
 internal final class ToggleableButton: UIButton, Toggleable {
-    var status: ToggleableStatusEnum = .On {
-        didSet {
-            self.alpha = status == .On ? 1 : 0.5
-        }
-    }
+    var status: Property<ToggleableStatusEnum> = Property(.On)
     
     // MARK: - Init
     public convenience init() {
@@ -32,8 +28,12 @@ internal final class ToggleableButton: UIButton, Toggleable {
     private override init(frame: CGRect) {
         super.init(frame: frame)
         
-        reactive.tap.observeNext {
-            self.status = self.status == .On ? .Off : .On
+        _ = reactive.tap.observeNext { [unowned self] _ in
+            self.status.next(self.status.value == .On ? .Off : .On)
+        }
+        
+        _ = status.observeNext { [unowned self] (status) in
+            self.alpha = status == .On ? 1 : 0.5
         }
     }
     

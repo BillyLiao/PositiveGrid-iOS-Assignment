@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Bond
 
 enum ToggleableStatusEnum {
     case On
@@ -14,7 +15,7 @@ enum ToggleableStatusEnum {
 }
 
 protocol Toggleable {
-    var status: ToggleableStatusEnum { get set }
+    var status: Observable<ToggleableStatusEnum> { get set }
 }
 
 
