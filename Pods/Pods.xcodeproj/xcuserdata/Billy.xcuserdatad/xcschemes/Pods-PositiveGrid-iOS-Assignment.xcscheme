@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '634E2DA4525929DE595B7423A88F53F7'
+               BlueprintIdentifier = '813479AB282E5226F3A16E2C9CE28425'
                BlueprintName = 'Pods-PositiveGrid-iOS-Assignment'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods-PositiveGrid-iOS-Assignment.framework'>

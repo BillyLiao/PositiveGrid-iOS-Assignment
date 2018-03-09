@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Bond.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Differ.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MIKMIDI.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -20,6 +30,11 @@
 			<false/>
 		</dict>
 		<key>Pods-PositiveGrid-iOS-Assignment.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ReactiveKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

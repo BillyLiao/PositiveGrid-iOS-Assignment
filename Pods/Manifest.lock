@@ -1,18 +1,27 @@
 PODS:
+  - Bond (6.5.0):
+    - Differ (~> 1.0.0)
+    - ReactiveKit (~> 3.7.4)
+  - Differ (1.0.2)
   - MIKMIDI (1.6.2)
   - Novocaine (0.0.1)
   - NVDSP (0.0.1):
     - Novocaine
+  - ReactiveKit (3.7.4)
 
 DEPENDENCIES:
+  - Bond
   - MIKMIDI
   - NVDSP
 
 SPEC CHECKSUMS:
+  Bond: 03e45b192c605a87937299b0e0f3164f3de00f95
+  Differ: a571b66c49d0fc83fe5af9a4a41f09bb09e91c85
   MIKMIDI: fa6df0bfa8427a0dc9e179bcf068b2b4b6747e6c
   Novocaine: '07991e1643369e8b660f361f87f88c797d99a53f'
   NVDSP: 25d806aeeaf3ed915f00085909abe7768cb48239
+  ReactiveKit: 0af7e43958a532342e0e247d2aeb318653628e68
 
-PODFILE CHECKSUM: fddd65136cd0dff08a8152b1f8d764deded2a87b
+PODFILE CHECKSUM: 665252490e60222099d241d93de8af2d9b8a6e75
 
 COCOAPODS: 1.2.1
