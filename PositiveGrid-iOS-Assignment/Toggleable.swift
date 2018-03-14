@@ -17,5 +17,3 @@ enum ToggleableStatusEnum {
 protocol Toggleable {
     var status: Observable<ToggleableStatusEnum> { get set }
 }
-
-

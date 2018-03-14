@@ -1,28 +1,23 @@
 //
-//  ToggleableButton.swift
+//  Input.swift
 //  PositiveGrid-iOS-Assignment
 //
-//  Created by 廖慶麟 on 2018/3/9.
+//  Created by 廖慶麟 on 2018/3/14.
 //  Copyright © 2018年 廖慶麟. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import Bond
 import ReactiveKit
 
-internal final class ToggleableButton: UIButton, Toggleable {
+internal final class Input: SigPathComponent, Toggleable {
     var status: Property<ToggleableStatusEnum> = Property(.On)
     
     // MARK: - Init
     public convenience init() {
-        self.init(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
-        
-        setTitleColor(UIColor.black, for: .normal)
-        
-        layer.borderColor = UIColor.black.cgColor
-        layer.borderWidth = 1.0
-        layer.cornerRadius = 3.0
-        clipsToBounds = true
+        self.init(frame: CGRect.zero)
+    
+        self.type = .input
     }
     
     private override init(frame: CGRect) {
