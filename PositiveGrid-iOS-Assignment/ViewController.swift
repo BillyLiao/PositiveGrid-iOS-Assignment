@@ -50,6 +50,11 @@ internal final class ViewController: UIViewController {
                 self.sequencer.resumePlayback()
             }
         }
+        
+        _ = sigPathView.effects.observeNext { (effects) in
+            // Here for observing effects sig sequence chaining in order
+            print("☝🏻 Pedals chaining status: \(effects)")
+        }
     }
     
     // MARK: - Basic Setup

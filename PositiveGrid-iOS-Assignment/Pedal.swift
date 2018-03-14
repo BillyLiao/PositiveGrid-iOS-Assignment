@@ -11,7 +11,8 @@ import Bond
 import ReactiveKit
 
 public protocol PedalDelegate: class {
-    func shouldRearrangePedal(on originPoint: CGPoint, to targetPoint: CGPoint)
+    func shouldRearrangePedalView(on originPoint: CGPoint, to targetPoint: CGPoint)
+    func shouldUpdateEffects()
 }
 
 internal final class Pedal: SigPathComponent, Toggleable, Draggable {
@@ -68,10 +69,11 @@ internal final class Pedal: SigPathComponent, Toggleable, Draggable {
                 
                 if pan.state == .changed {
                     if let closerPoint = closerPoint {
-                        self.delegate?.shouldRearrangePedal(on: closerPoint, to: self.originAnchorPoint)
+                        self.delegate?.shouldRearrangePedalView(on: closerPoint, to: self.originAnchorPoint)
                     }
                 }else if pan.state == .ended {
                     self.targetAnchorPoint.next(closerPoint ?? self.originAnchorPoint)
+                    self.delegate?.shouldUpdateEffects()
                 }
             }
         })

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Bond
+import ReactiveKit
 
 internal class SigPathView: UIView {
 
@@ -14,6 +16,9 @@ internal class SigPathView: UIView {
     open private(set) var input: Input = Input()
     private var pedals: [Pedal] = []
     private var output: Output = Output()
+    
+    // MARK: - Observable
+    open private(set) var effects: Observable<[SigPathComponentEnum]> = Property([.lowPassFilter, .highPassFilter])
     
     private var allComponents: [SigPathComponent] {
         var _allComponents: [SigPathComponent] = []
@@ -36,6 +41,7 @@ internal class SigPathView: UIView {
         return averageWidth
     }
     
+    // SHOULD NOT BE EDITED OUT OF INITIALIZER
     public var availableAnchorPoints: [CGPoint] = []
     
     // MARK: - Init
@@ -52,6 +58,9 @@ internal class SigPathView: UIView {
         self.pedals.forEach{
             $0.sigPath = self
             $0.delegate = self
+            $0.reactive.tap.observeNext {
+                self.updateEffects()
+            }
         }
         
         arrangeViews()
@@ -78,13 +87,38 @@ internal class SigPathView: UIView {
             availableAnchorPoints.append($0.center)
         }
     }
+    
+    private func updateEffects() {
+        var tempEffects: [SigPathComponentEnum] = []
+        
+        pedals.forEach { (pedal) in
+            if pedal.status.value == .On {
+                tempEffects.append(pedal.type)
+            }
+        }
+        
+        effects.next(tempEffects)
+    }
 }
 
 extension SigPathView: PedalDelegate {
-    func shouldRearrangePedal(on originPoint: CGPoint, to targetPoint: CGPoint) {
+    func shouldRearrangePedalView(on originPoint: CGPoint, to targetPoint: CGPoint) {
         let filteredPedals = pedals.filter{ $0.originAnchorPoint == originPoint }
         if let pedal = filteredPedals.first {
             pedal.targetAnchorPoint.next(targetPoint)
         }
+    }
+    
+    func shouldUpdateEffects() {
+        var tempPadels: [Pedal] = []
+        // Rearrange order of Pedals
+        availableAnchorPoints.forEach { (point) in
+            let filteredPedals = pedals.filter{ $0.originAnchorPoint == point }
+            if let pedal = filteredPedals.first {
+                tempPadels.append(pedal)
+            }
+        }
+        pedals = tempPadels
+        updateEffects()
     }
 }
