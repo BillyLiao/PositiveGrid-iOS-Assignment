@@ -70,6 +70,7 @@ internal final class Pedal: SigPathComponent, Toggleable, Draggable {
                 if pan.state == .changed {
                     if let closerPoint = closerPoint {
                         self.delegate?.shouldRearrangePedalView(on: closerPoint, to: self.originAnchorPoint)
+                        self.originAnchorPoint = closerPoint
                     }
                 }else if pan.state == .ended {
                     self.targetAnchorPoint.next(closerPoint ?? self.originAnchorPoint)
