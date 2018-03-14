@@ -8,8 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		4A5F1B7308F02716E3BF54B1 /* Pods_PositiveGrid_iOS_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6878C6B04C90F4F9DA55B2A /* Pods_PositiveGrid_iOS_Assignment.framework */; };
-		51032F4420523DB400B1918F /* ToggleableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51032F4320523DB400B1918F /* ToggleableButton.swift */; };
 		513A764E2058C617001854E9 /* soundFont.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 513A764D2058C617001854E9 /* soundFont.sf2 */; };
+		516CA6812058D5C90047E001 /* Pedal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA6802058D5C90047E001 /* Pedal.swift */; };
+		516CA6852058DCBE0047E001 /* Draggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA6842058DCBE0047E001 /* Draggable.swift */; };
+		516CA6892058E38A0047E001 /* SigPathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA6882058E38A0047E001 /* SigPathView.swift */; };
+		516CA68B2058E7400047E001 /* SigPathComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA68A2058E7400047E001 /* SigPathComponent.swift */; };
+		516CA68D2058E7FB0047E001 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA68C2058E7FB0047E001 /* Input.swift */; };
+		516CA68F2058E9870047E001 /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA68E2058E9870047E001 /* Output.swift */; };
+		516CA691205907490047E001 /* SigPathComponentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA690205907490047E001 /* SigPathComponentType.swift */; };
+		516CA693205918FF0047E001 /* CGPointExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA692205918FF0047E001 /* CGPointExtention.swift */; };
 		5196DD242050CF4A002392E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5196DD232050CF4A002392E2 /* AppDelegate.swift */; };
 		5196DD262050CF4A002392E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5196DD252050CF4A002392E2 /* ViewController.swift */; };
 		5196DD292050CF4A002392E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5196DD272050CF4A002392E2 /* Main.storyboard */; };
@@ -20,8 +27,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		51032F4320523DB400B1918F /* ToggleableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleableButton.swift; sourceTree = "<group>"; };
 		513A764D2058C617001854E9 /* soundFont.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = soundFont.sf2; sourceTree = "<group>"; };
+		516CA6802058D5C90047E001 /* Pedal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedal.swift; sourceTree = "<group>"; };
+		516CA6842058DCBE0047E001 /* Draggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draggable.swift; sourceTree = "<group>"; };
+		516CA6882058E38A0047E001 /* SigPathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigPathView.swift; sourceTree = "<group>"; };
+		516CA68A2058E7400047E001 /* SigPathComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigPathComponent.swift; sourceTree = "<group>"; };
+		516CA68C2058E7FB0047E001 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
+		516CA68E2058E9870047E001 /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
+		516CA690205907490047E001 /* SigPathComponentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigPathComponentType.swift; sourceTree = "<group>"; };
+		516CA692205918FF0047E001 /* CGPointExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointExtention.swift; sourceTree = "<group>"; };
 		5196DD202050CF4A002392E2 /* PositiveGrid-iOS-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PositiveGrid-iOS-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5196DD232050CF4A002392E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5196DD252050CF4A002392E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +86,14 @@
 				5196DD232050CF4A002392E2 /* AppDelegate.swift */,
 				5196DD252050CF4A002392E2 /* ViewController.swift */,
 				51BADF822052309B00A6F879 /* Toggleable.swift */,
-				51032F4320523DB400B1918F /* ToggleableButton.swift */,
+				516CA6842058DCBE0047E001 /* Draggable.swift */,
+				516CA6802058D5C90047E001 /* Pedal.swift */,
+				516CA68C2058E7FB0047E001 /* Input.swift */,
+				516CA68E2058E9870047E001 /* Output.swift */,
+				516CA6882058E38A0047E001 /* SigPathView.swift */,
+				516CA692205918FF0047E001 /* CGPointExtention.swift */,
+				516CA68A2058E7400047E001 /* SigPathComponent.swift */,
+				516CA690205907490047E001 /* SigPathComponentType.swift */,
 				51F4FE062050E52B00D7F54E /* examMIDI.mid */,
 				513A764D2058C617001854E9 /* soundFont.sf2 */,
 				5196DD272050CF4A002392E2 /* Main.storyboard */,
@@ -225,10 +246,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				516CA6812058D5C90047E001 /* Pedal.swift in Sources */,
 				5196DD262050CF4A002392E2 /* ViewController.swift in Sources */,
-				51032F4420523DB400B1918F /* ToggleableButton.swift in Sources */,
+				516CA6852058DCBE0047E001 /* Draggable.swift in Sources */,
+				516CA68B2058E7400047E001 /* SigPathComponent.swift in Sources */,
+				516CA691205907490047E001 /* SigPathComponentType.swift in Sources */,
+				516CA68F2058E9870047E001 /* Output.swift in Sources */,
+				516CA6892058E38A0047E001 /* SigPathView.swift in Sources */,
+				516CA68D2058E7FB0047E001 /* Input.swift in Sources */,
 				51BADF832052309B00A6F879 /* Toggleable.swift in Sources */,
 				5196DD242050CF4A002392E2 /* AppDelegate.swift in Sources */,
+				516CA693205918FF0047E001 /* CGPointExtention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
