@@ -15,23 +15,23 @@ internal final class ViewController: UIViewController {
     var sequence: MIKMIDISequence!
     var sequencer = MIKMIDISequencer()
     
-    var playButton: ToggleableButton = ToggleableButton()
-    
     let midiURLPath = Bundle.main.path(forResource: "examMIDI", ofType: "mid")
     let soundFontURLPath = Bundle.main.path(forResource: "soundFont", ofType: "sf2")
+    
+    // MARK: - View Component
+    var sigPathView: SigPathView = SigPathView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if loadMIDI() { sequencer.sequence = sequence }
         applySoundFont()
-        sequencer.startPlayback()
         
-        configurePlayButton()
+        configureSigPathView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-
+        // sequencer.startPlayback()
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,21 +73,13 @@ internal final class ViewController: UIViewController {
     }
     
     // MARK: - View Configuration
-    private func configurePlayButton() {
-        playButton.setTitle("Audio Player", for: .normal)
+    private func configureSigPathView() {
+        let sigPathViewFrame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: UIScreen.main.bounds.height - 100)
         
-        playButton.center = view.center
-        
-        _ = playButton.status.observeNext { [unowned self] (status) in
-            // TODO: Optimization without if-else statement
-            if status == .Off {
-                self.sequencer.stop()
-            }else {
-                self.sequencer.resumePlayback()
-            }
-        }
-
-        view.addSubview(playButton)
+        sigPathView = SigPathView(frame: sigPathViewFrame, pedals: [Pedal(type: .lowPassFilter), Pedal(type: .highPassFilter)])
+        sigPathView.center = view.center
+    
+        view.addSubview(sigPathView)
     }
 }
 
