@@ -53,6 +53,7 @@ internal final class ViewController: UIViewController {
         
         _ = sigPathView.effects.observeNext { (effects) in
             // Here for observing effects sig sequence chaining in order
+            // Use it to apply filter effect while Audio Processing
             print("☝🏻 Pedals chaining status: \(effects)")
         }
     }
