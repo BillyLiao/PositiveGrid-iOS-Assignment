@@ -28,15 +28,28 @@ internal final class ViewController: UIViewController {
         applySoundFont()
         
         configureSigPathView()
+        
+        bind()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        // sequencer.startPlayback()
+        sequencer.startPlayback()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Binding
+    private func bind() {
+        _ = sigPathView.input.reactive.tap.observeNext {
+            if self.sequencer.isPlaying {
+                self.sequencer.stop()
+            }else {
+                self.sequencer.resumePlayback()
+            }
+        }
     }
     
     // MARK: - Basic Setup

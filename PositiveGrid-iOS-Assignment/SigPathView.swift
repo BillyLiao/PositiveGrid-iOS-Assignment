@@ -11,7 +11,7 @@ import UIKit
 internal class SigPathView: UIView {
 
     // MARK: - View Component
-    private var input: Input = Input()
+    open private(set) var input: Input = Input()
     private var pedals: [Pedal] = []
     private var output: Output = Output()
     
