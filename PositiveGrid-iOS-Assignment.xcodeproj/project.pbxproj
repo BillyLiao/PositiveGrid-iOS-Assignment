@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4A5F1B7308F02716E3BF54B1 /* Pods_PositiveGrid_iOS_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6878C6B04C90F4F9DA55B2A /* Pods_PositiveGrid_iOS_Assignment.framework */; };
 		51032F4420523DB400B1918F /* ToggleableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51032F4320523DB400B1918F /* ToggleableButton.swift */; };
+		513A764E2058C617001854E9 /* soundFont.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 513A764D2058C617001854E9 /* soundFont.sf2 */; };
 		5196DD242050CF4A002392E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5196DD232050CF4A002392E2 /* AppDelegate.swift */; };
 		5196DD262050CF4A002392E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5196DD252050CF4A002392E2 /* ViewController.swift */; };
 		5196DD292050CF4A002392E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5196DD272050CF4A002392E2 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		51032F4320523DB400B1918F /* ToggleableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleableButton.swift; sourceTree = "<group>"; };
+		513A764D2058C617001854E9 /* soundFont.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = soundFont.sf2; sourceTree = "<group>"; };
 		5196DD202050CF4A002392E2 /* PositiveGrid-iOS-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PositiveGrid-iOS-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5196DD232050CF4A002392E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5196DD252050CF4A002392E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				51BADF822052309B00A6F879 /* Toggleable.swift */,
 				51032F4320523DB400B1918F /* ToggleableButton.swift */,
 				51F4FE062050E52B00D7F54E /* examMIDI.mid */,
+				513A764D2058C617001854E9 /* soundFont.sf2 */,
 				5196DD272050CF4A002392E2 /* Main.storyboard */,
 				5196DD2A2050CF4A002392E2 /* Assets.xcassets */,
 				5196DD2C2050CF4A002392E2 /* LaunchScreen.storyboard */,
@@ -163,6 +166,7 @@
 				5196DD2B2050CF4A002392E2 /* Assets.xcassets in Resources */,
 				51F4FE072050E52B00D7F54E /* examMIDI.mid in Resources */,
 				5196DD292050CF4A002392E2 /* Main.storyboard in Resources */,
+				513A764E2058C617001854E9 /* soundFont.sf2 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
