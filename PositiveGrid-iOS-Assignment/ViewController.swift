@@ -66,6 +66,7 @@ internal final class ViewController: UIViewController {
             }
         }
         
+        // WARN: what if there are two lowPassFilter with different settings?
         _ = sigPathView.effects.observeNext { [unowned self] (effects) in
             // Here for observing effects sig sequence chaining in order
             // Use it to apply filter effect while Audio Processing

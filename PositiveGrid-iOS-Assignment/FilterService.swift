@@ -56,7 +56,7 @@ internal final class FilterService: FilterServiceType {
     func update(with effects: [SigPathComponentEnum]) {
         self.onFilters.removeAll(keepingCapacity: true)
         
-        // Update filters combination array
+        // Update on filters array
         effects.forEach { [unowned self] (effect) in
             switch effect {
             case .lowPassFilter: self.onFilters.append(self.availableFilters.filter{ $0 is NVLowpassFilter }.first!)
@@ -71,6 +71,7 @@ internal final class FilterService: FilterServiceType {
     }
     
     // MARK: Setter
+    // if set availableFilters manually, onFilters will be set at the same time
     func set(availableFilters: [NVDSP]) {
         self.availableFilters = availableFilters
     }
