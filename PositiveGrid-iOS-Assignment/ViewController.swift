@@ -22,11 +22,8 @@ internal final class ViewController: UIViewController {
     // MARK: - View Component
     var sigPathView: SigPathView = SigPathView()
     
-    // MARK: - Filters
-    var lowPassFilter: NVLowpassFilter = NVLowpassFilter(samplingRate: 44100)
-    var highPassFilter: NVHighpassFilter = NVHighpassFilter(samplingRate: 44100)
-    var availableFilters: [NVDSP] = []
-    var filtersCombination: [NVDSP] = []
+    // MARK: - Filter Service
+    var filterService: FilterService = FilterService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +31,6 @@ internal final class ViewController: UIViewController {
         // load basic audio and soundfont
         if loadMIDI() { sequencer.sequence = sequence }
         applySoundFont()
-        
-        // setup filters
-        setupLowPassFilter()
-        setupHighPassFilter()
-        filtersCombination = [lowPassFilter, highPassFilter]
-        availableFilters = [lowPassFilter, highPassFilter]
         
         // configure main view
         configureSigPathView()
@@ -50,10 +41,8 @@ internal final class ViewController: UIViewController {
         // callbacks handling
         sequencer.sequence.tracks.forEach { (track) in
             let synth = sequencer.builtinSynthesizer(for: track)!
-            synth.outputBlock = { data, numFrames, numChannels in
-                self.filtersCombination.forEach({ (dsp) in
-                    dsp.filterData(data, numFrames: numFrames, numChannels: numChannels)
-                })
+            synth.outputBlock = { [unowned self] data, numFrames, numChannels in
+                self.filterService.apply(on: data, numFrames: numFrames, numChannels: numChannels)
             }
         }
     }
@@ -82,17 +71,7 @@ internal final class ViewController: UIViewController {
             // Use it to apply filter effect while Audio Processing
             
             print("☝🏻 Pedals chaining status: \(effects)")
-            
-            self.filtersCombination.removeAll(keepingCapacity: true)
-
-            // Update filters combination array
-            for (i, effect) in effects.enumerated() {
-                switch effect {
-                case .lowPassFilter: self.filtersCombination.append(self.availableFilters.filter{ $0 is NVLowpassFilter }.first!)
-                case .highPassFilter: self.filtersCombination.append(self.availableFilters.filter{ $0 is NVHighpassFilter }.first!)
-                default: break
-                }
-            }
+            self.filterService.update(with: effects)
         }
     }
     
@@ -128,18 +107,7 @@ internal final class ViewController: UIViewController {
         
         return true
     }
-    
-    // MARK: Filter Setup
-    private func setupHighPassFilter() {
-        highPassFilter.cornerFrequency = 2000.0
-        highPassFilter.q = 0.5
-    }
-    
-    private func setupLowPassFilter() {
-        lowPassFilter.cornerFrequency = 800.0
-        lowPassFilter.q = 0.8
-    }
-    
+
     // MARK: - View Configuration
     private func configureSigPathView() {
         let sigPathViewFrame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: UIScreen.main.bounds.height - 100)

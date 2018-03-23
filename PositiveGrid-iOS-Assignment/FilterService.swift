@@ -31,6 +31,10 @@ internal final class FilterService: FilterServiceType {
     }
     open fileprivate(set) var onFilters: [NVDSP] = []
     
+    init(){
+        setup()
+    }
+    
     // MARK: Setup
     func setup() {
         // default setup
