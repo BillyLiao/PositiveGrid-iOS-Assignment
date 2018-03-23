@@ -25,6 +25,7 @@ internal final class ViewController: UIViewController {
     // MARK: - Filters
     var lowPassFilter: NVLowpassFilter = NVLowpassFilter(samplingRate: 44100)
     var highPassFilter: NVHighpassFilter = NVHighpassFilter(samplingRate: 44100)
+    var availableFilters: [NVDSP] = []
     var filtersCombination: [NVDSP] = []
     
     override func viewDidLoad() {
@@ -38,6 +39,7 @@ internal final class ViewController: UIViewController {
         setupLowPassFilter()
         setupHighPassFilter()
         filtersCombination = [lowPassFilter, highPassFilter]
+        availableFilters = [lowPassFilter, highPassFilter]
         
         // configure main view
         configureSigPathView()
@@ -75,12 +77,22 @@ internal final class ViewController: UIViewController {
             }
         }
         
-        _ = sigPathView.effects.observeNext { (effects) in
+        _ = sigPathView.effects.observeNext { [unowned self] (effects) in
             // Here for observing effects sig sequence chaining in order
             // Use it to apply filter effect while Audio Processing
+            
             print("☝🏻 Pedals chaining status: \(effects)")
+            
+            self.filtersCombination.removeAll(keepingCapacity: true)
+
             // Update filters combination array
-            e
+            for (i, effect) in effects.enumerated() {
+                switch effect {
+                case .lowPassFilter: self.filtersCombination.append(self.availableFilters.filter{ $0 is NVLowpassFilter }.first!)
+                case .highPassFilter: self.filtersCombination.append(self.availableFilters.filter{ $0 is NVHighpassFilter }.first!)
+                default: break
+                }
+            }
         }
     }
     
@@ -138,4 +150,3 @@ internal final class ViewController: UIViewController {
         view.addSubview(sigPathView)
     }
 }
-
