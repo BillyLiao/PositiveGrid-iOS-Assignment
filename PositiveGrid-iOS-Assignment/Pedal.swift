@@ -15,7 +15,7 @@ public protocol PedalDelegate: class {
     func shouldUpdateEffects()
 }
 
-internal final class Pedal: SigPathComponent, Toggleable, Draggable {
+internal final class Pedal: SigPathViewComponent, Toggleable, Draggable {
     
     weak var sigPath: SigPathView?
     

@@ -10,7 +10,7 @@ import Foundation
 import Bond
 import ReactiveKit
 
-internal final class Output: SigPathComponent {
+internal final class Output: SigPathViewComponent {
     
     // MARK: - Init
     public convenience init() {

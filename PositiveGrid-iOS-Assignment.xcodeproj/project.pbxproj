@@ -12,7 +12,7 @@
 		516CA6812058D5C90047E001 /* Pedal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA6802058D5C90047E001 /* Pedal.swift */; };
 		516CA6852058DCBE0047E001 /* Draggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA6842058DCBE0047E001 /* Draggable.swift */; };
 		516CA6892058E38A0047E001 /* SigPathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA6882058E38A0047E001 /* SigPathView.swift */; };
-		516CA68B2058E7400047E001 /* SigPathComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA68A2058E7400047E001 /* SigPathComponent.swift */; };
+		516CA68B2058E7400047E001 /* SigPathViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA68A2058E7400047E001 /* SigPathViewComponent.swift */; };
 		516CA68D2058E7FB0047E001 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA68C2058E7FB0047E001 /* Input.swift */; };
 		516CA68F2058E9870047E001 /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA68E2058E9870047E001 /* Output.swift */; };
 		516CA693205918FF0047E001 /* CGPointExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA692205918FF0047E001 /* CGPointExtention.swift */; };
@@ -30,7 +30,7 @@
 		516CA6802058D5C90047E001 /* Pedal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedal.swift; sourceTree = "<group>"; };
 		516CA6842058DCBE0047E001 /* Draggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draggable.swift; sourceTree = "<group>"; };
 		516CA6882058E38A0047E001 /* SigPathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigPathView.swift; sourceTree = "<group>"; };
-		516CA68A2058E7400047E001 /* SigPathComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigPathComponent.swift; sourceTree = "<group>"; };
+		516CA68A2058E7400047E001 /* SigPathViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigPathViewComponent.swift; sourceTree = "<group>"; };
 		516CA68C2058E7FB0047E001 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		516CA68E2058E9870047E001 /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
 		516CA692205918FF0047E001 /* CGPointExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointExtention.swift; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 				516CA68E2058E9870047E001 /* Output.swift */,
 				516CA6882058E38A0047E001 /* SigPathView.swift */,
 				516CA692205918FF0047E001 /* CGPointExtention.swift */,
-				516CA68A2058E7400047E001 /* SigPathComponent.swift */,
+				516CA68A2058E7400047E001 /* SigPathViewComponent.swift */,
 				51F4FE062050E52B00D7F54E /* examMIDI.mid */,
 				513A764D2058C617001854E9 /* soundFont.sf2 */,
 				5196DD272050CF4A002392E2 /* Main.storyboard */,
@@ -246,7 +246,7 @@
 				516CA6812058D5C90047E001 /* Pedal.swift in Sources */,
 				5196DD262050CF4A002392E2 /* ViewController.swift in Sources */,
 				516CA6852058DCBE0047E001 /* Draggable.swift in Sources */,
-				516CA68B2058E7400047E001 /* SigPathComponent.swift in Sources */,
+				516CA68B2058E7400047E001 /* SigPathViewComponent.swift in Sources */,
 				516CA68F2058E9870047E001 /* Output.swift in Sources */,
 				516CA6892058E38A0047E001 /* SigPathView.swift in Sources */,
 				516CA68D2058E7FB0047E001 /* Input.swift in Sources */,
