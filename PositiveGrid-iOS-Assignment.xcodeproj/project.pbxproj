@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4A5F1B7308F02716E3BF54B1 /* Pods_PositiveGrid_iOS_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6878C6B04C90F4F9DA55B2A /* Pods_PositiveGrid_iOS_Assignment.framework */; };
 		513A764E2058C617001854E9 /* soundFont.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 513A764D2058C617001854E9 /* soundFont.sf2 */; };
+		5151995620653AEE00FAD07C /* FilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151995520653AEE00FAD07C /* FilterService.swift */; };
 		516CA6812058D5C90047E001 /* Pedal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA6802058D5C90047E001 /* Pedal.swift */; };
 		516CA6852058DCBE0047E001 /* Draggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA6842058DCBE0047E001 /* Draggable.swift */; };
 		516CA6892058E38A0047E001 /* SigPathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA6882058E38A0047E001 /* SigPathView.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		513A764D2058C617001854E9 /* soundFont.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = soundFont.sf2; sourceTree = "<group>"; };
+		5151995520653AEE00FAD07C /* FilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterService.swift; sourceTree = "<group>"; };
 		516CA6802058D5C90047E001 /* Pedal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedal.swift; sourceTree = "<group>"; };
 		516CA6842058DCBE0047E001 /* Draggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draggable.swift; sourceTree = "<group>"; };
 		516CA6882058E38A0047E001 /* SigPathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigPathView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				516CA6882058E38A0047E001 /* SigPathView.swift */,
 				516CA692205918FF0047E001 /* CGPointExtention.swift */,
 				516CA68A2058E7400047E001 /* SigPathViewComponent.swift */,
+				5151995520653AEE00FAD07C /* FilterService.swift */,
 				51F4FE062050E52B00D7F54E /* examMIDI.mid */,
 				513A764D2058C617001854E9 /* soundFont.sf2 */,
 				5196DD272050CF4A002392E2 /* Main.storyboard */,
@@ -246,6 +249,7 @@
 				516CA6812058D5C90047E001 /* Pedal.swift in Sources */,
 				5196DD262050CF4A002392E2 /* ViewController.swift in Sources */,
 				516CA6852058DCBE0047E001 /* Draggable.swift in Sources */,
+				5151995620653AEE00FAD07C /* FilterService.swift in Sources */,
 				516CA68B2058E7400047E001 /* SigPathViewComponent.swift in Sources */,
 				516CA68F2058E9870047E001 /* Output.swift in Sources */,
 				516CA6892058E38A0047E001 /* SigPathView.swift in Sources */,
