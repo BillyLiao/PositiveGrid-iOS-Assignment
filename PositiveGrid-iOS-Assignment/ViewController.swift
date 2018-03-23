@@ -9,6 +9,7 @@
 import UIKit
 import MIKMIDI
 import Bond
+import NVDSP
 
 internal final class ViewController: UIViewController {
 
@@ -21,15 +22,38 @@ internal final class ViewController: UIViewController {
     // MARK: - View Component
     var sigPathView: SigPathView = SigPathView()
     
+    // MARK: - Filters
+    var lowPassFilter: NVLowpassFilter = NVLowpassFilter(samplingRate: 44100)
+    var highPassFilter: NVHighpassFilter = NVHighpassFilter(samplingRate: 44100)
+    var filtersCombination: [NVDSP] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // load basic audio and soundfont
         if loadMIDI() { sequencer.sequence = sequence }
         applySoundFont()
         
+        // setup filters
+        setupLowPassFilter()
+        setupHighPassFilter()
+        filtersCombination = [lowPassFilter, highPassFilter]
+        
+        // configure main view
         configureSigPathView()
         
+        // bind with view
         bind()
+        
+        // callbacks handling
+        sequencer.sequence.tracks.forEach { (track) in
+            let synth = sequencer.builtinSynthesizer(for: track)!
+            synth.outputBlock = { data, numFrames, numChannels in
+                self.filtersCombination.forEach({ (dsp) in
+                    dsp.filterData(data, numFrames: numFrames, numChannels: numChannels)
+                })
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,6 +79,8 @@ internal final class ViewController: UIViewController {
             // Here for observing effects sig sequence chaining in order
             // Use it to apply filter effect while Audio Processing
             print("☝🏻 Pedals chaining status: \(effects)")
+            // Update filters combination array
+            e
         }
     }
     
@@ -89,6 +115,17 @@ internal final class ViewController: UIViewController {
         }
         
         return true
+    }
+    
+    // MARK: Filter Setup
+    private func setupHighPassFilter() {
+        highPassFilter.cornerFrequency = 2000.0
+        highPassFilter.q = 0.5
+    }
+    
+    private func setupLowPassFilter() {
+        lowPassFilter.cornerFrequency = 800.0
+        lowPassFilter.q = 0.8
     }
     
     // MARK: - View Configuration
