@@ -9,6 +9,7 @@
 import UIKit
 import MIKMIDI
 import Bond
+import NVDSP
 
 internal final class ViewController: UIViewController {
 
@@ -21,15 +22,29 @@ internal final class ViewController: UIViewController {
     // MARK: - View Component
     var sigPathView: SigPathView = SigPathView()
     
+    // MARK: - Filter Service
+    var filterService: FilterService = FilterService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // load basic audio and soundfont
         if loadMIDI() { sequencer.sequence = sequence }
         applySoundFont()
         
+        // configure main view
         configureSigPathView()
         
+        // bind with view
         bind()
+        
+        // callbacks handling
+        sequencer.sequence.tracks.forEach { (track) in
+            let synth = sequencer.builtinSynthesizer(for: track)!
+            synth.outputBlock = { [unowned self] data, numFrames, numChannels in
+                self.filterService.apply(on: data, numFrames: numFrames, numChannels: numChannels)
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,10 +66,13 @@ internal final class ViewController: UIViewController {
             }
         }
         
-        _ = sigPathView.effects.observeNext { (effects) in
+        // WARN: what if there are two lowPassFilter with different settings?
+        _ = sigPathView.effects.observeNext { [unowned self] (effects) in
             // Here for observing effects sig sequence chaining in order
             // Use it to apply filter effect while Audio Processing
+            
             print("☝🏻 Pedals chaining status: \(effects)")
+            self.filterService.update(with: effects)
         }
     }
     
@@ -90,7 +108,7 @@ internal final class ViewController: UIViewController {
         
         return true
     }
-    
+
     // MARK: - View Configuration
     private func configureSigPathView() {
         let sigPathViewFrame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 40, height: UIScreen.main.bounds.height - 100)
@@ -101,4 +119,3 @@ internal final class ViewController: UIViewController {
         view.addSubview(sigPathView)
     }
 }
-

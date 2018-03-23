@@ -14,6 +14,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void (^OutputBlock)(float *data, UInt32 numFrames, UInt32 numChannels);
+
 /**
  *  MIKMIDISynthesizer provides a simple way to synthesize MIDI messages to
  *  produce sound output.
@@ -142,6 +144,9 @@ NS_ASSUME_NONNULL_BEGIN
  *  @see -setupAUGraph
  */
 @property (nonatomic, nullable) AUGraph graph;
+
+// Callback
+@property (nonatomic, retain, nullable) OutputBlock outputBlock;
 
 // Deprecated
 

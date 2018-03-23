@@ -39,6 +39,8 @@
 		_componentDescription = componentDescription;
 		if (![self setupAUGraph]) return nil;
 
+        self.outputBlock = nil;
+
 		self.sendMIDICommand = ^(MIKMIDISynthesizer *synth, MusicDeviceComponent inUnit, UInt32 inStatus, UInt32 inData1, UInt32 inData2, UInt32 inOffsetSampleFrame) {
 			return MusicDeviceMIDIEvent(inUnit, inStatus, inData1, inData2, inOffsetSampleFrame);
 		};
@@ -480,11 +482,19 @@ static OSStatus MIKMIDISynthesizerInstrumentUnitRenderCallback(void *						inRef
 															   UInt32						inNumberFrames,
 															   AudioBufferList *			ioData)
 {
-	if (*ioActionFlags & kAudioUnitRenderAction_PreRender) {
+	// if (*ioActionFlags & kAudioUnitRenderAction_PreRender) {
 		if (!(inTimeStamp->mFlags & kAudioTimeStampHostTimeValid)) return noErr;
 		if (!(inTimeStamp->mFlags & kAudioTimeStampSampleTimeValid)) return noErr;
 
 		MIKMIDISynthesizer *synth = (__bridge MIKMIDISynthesizer *)inRefCon;
+    
+        if (!synth.outputBlock)
+            return noErr;
+    
+        for (int iBuffer=0; iBuffer < ioData->mNumberBuffers; ++iBuffer) {
+            synth.outputBlock((float *)ioData->mBuffers[iBuffer].mData, inNumberFrames, 1);
+        }
+    
 		AudioUnit instrumentUnit = synth.instrumentUnit;
 		AudioStreamBasicDescription LPCMASBD;
 		UInt32 sizeOfLPCMASBD = sizeof(LPCMASBD);
@@ -495,8 +505,8 @@ static OSStatus MIKMIDISynthesizerInstrumentUnitRenderCallback(void *						inRef
 		}
 
 		return MIKMIDISynthesizerScheduleUpcomingMIDICommands(synth, instrumentUnit, inNumberFrames, LPCMASBD.mSampleRate, inTimeStamp);
-	}
-	return noErr;
+	// }
+	// return noErr;
 }
 
 #pragma mark - Properties
@@ -533,6 +543,11 @@ static OSStatus MIKMIDISynthesizerInstrumentUnitRenderCallback(void *						inRef
 			if (err) NSLog(@"Unable to add render notify to instrument unit %p: %@", _instrumentUnit, @(err));
 		}
 	}
+}
+
+- (void)setOutputBlock:(OutputBlock)outputBlock
+{
+    _outputBlock = outputBlock;
 }
 
 #pragma mark - Deprecated

@@ -10,7 +10,7 @@ import Foundation
 import Bond
 import ReactiveKit
 
-internal final class Input: SigPathComponent, Toggleable {
+internal final class Input: SigPathViewComponent, Toggleable {
     var status: Property<ToggleableStatusEnum> = Property(.On)
     
     // MARK: - Init

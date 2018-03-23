@@ -1,5 +1,5 @@
 //
-//  SigPathComponent.swift
+//  SigPathViewComponent.swift
 //  PositiveGrid-iOS-Assignment
 //
 //  Created by 廖慶麟 on 2018/3/14.
@@ -15,7 +15,7 @@ public enum SigPathComponentEnum: String {
     case highPassFilter = "HighPass Filter"
 }
 
-internal class SigPathComponent: UIButton {
+internal class SigPathViewComponent: UIButton {
 
     var type: SigPathComponentEnum! {
         didSet {

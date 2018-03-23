@@ -20,8 +20,8 @@ internal class SigPathView: UIView {
     // MARK: - Observable
     open private(set) var effects: Observable<[SigPathComponentEnum]> = Property([.lowPassFilter, .highPassFilter])
     
-    private var allComponents: [SigPathComponent] {
-        var _allComponents: [SigPathComponent] = []
+    private var allComponents: [SigPathViewComponent] {
+        var _allComponents: [SigPathViewComponent] = []
         
         _allComponents.append(input)
         pedals.forEach{ _allComponents.append($0) }
