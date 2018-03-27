@@ -7,14 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A5F1B7308F02716E3BF54B1 /* Pods_PositiveGrid_iOS_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6878C6B04C90F4F9DA55B2A /* Pods_PositiveGrid_iOS_Assignment.framework */; };
+		513A764E2058C617001854E9 /* soundFont.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 513A764D2058C617001854E9 /* soundFont.sf2 */; };
+		5151995620653AEE00FAD07C /* FilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151995520653AEE00FAD07C /* FilterService.swift */; };
+		516CA6812058D5C90047E001 /* Pedal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA6802058D5C90047E001 /* Pedal.swift */; };
+		516CA6852058DCBE0047E001 /* Draggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA6842058DCBE0047E001 /* Draggable.swift */; };
+		516CA6892058E38A0047E001 /* SigPathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA6882058E38A0047E001 /* SigPathView.swift */; };
+		516CA68B2058E7400047E001 /* SigPathViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA68A2058E7400047E001 /* SigPathViewComponent.swift */; };
+		516CA68D2058E7FB0047E001 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA68C2058E7FB0047E001 /* Input.swift */; };
+		516CA68F2058E9870047E001 /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA68E2058E9870047E001 /* Output.swift */; };
+		516CA693205918FF0047E001 /* CGPointExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA692205918FF0047E001 /* CGPointExtention.swift */; };
 		5196DD242050CF4A002392E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5196DD232050CF4A002392E2 /* AppDelegate.swift */; };
 		5196DD262050CF4A002392E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5196DD252050CF4A002392E2 /* ViewController.swift */; };
 		5196DD292050CF4A002392E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5196DD272050CF4A002392E2 /* Main.storyboard */; };
 		5196DD2B2050CF4A002392E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5196DD2A2050CF4A002392E2 /* Assets.xcassets */; };
 		5196DD2E2050CF4A002392E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5196DD2C2050CF4A002392E2 /* LaunchScreen.storyboard */; };
+		51BADF832052309B00A6F879 /* Toggleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BADF822052309B00A6F879 /* Toggleable.swift */; };
+		51F4FE072050E52B00D7F54E /* examMIDI.mid in Resources */ = {isa = PBXBuildFile; fileRef = 51F4FE062050E52B00D7F54E /* examMIDI.mid */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		513A764D2058C617001854E9 /* soundFont.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = soundFont.sf2; sourceTree = "<group>"; };
+		5151995520653AEE00FAD07C /* FilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterService.swift; sourceTree = "<group>"; };
+		516CA6802058D5C90047E001 /* Pedal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedal.swift; sourceTree = "<group>"; };
+		516CA6842058DCBE0047E001 /* Draggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draggable.swift; sourceTree = "<group>"; };
+		516CA6882058E38A0047E001 /* SigPathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigPathView.swift; sourceTree = "<group>"; };
+		516CA68A2058E7400047E001 /* SigPathViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigPathViewComponent.swift; sourceTree = "<group>"; };
+		516CA68C2058E7FB0047E001 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
+		516CA68E2058E9870047E001 /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
+		516CA692205918FF0047E001 /* CGPointExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointExtention.swift; sourceTree = "<group>"; };
 		5196DD202050CF4A002392E2 /* PositiveGrid-iOS-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PositiveGrid-iOS-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5196DD232050CF4A002392E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5196DD252050CF4A002392E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +43,11 @@
 		5196DD2A2050CF4A002392E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5196DD2D2050CF4A002392E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5196DD2F2050CF4A002392E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51BADF822052309B00A6F879 /* Toggleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toggleable.swift; sourceTree = "<group>"; };
+		51F4FE062050E52B00D7F54E /* examMIDI.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = examMIDI.mid; sourceTree = "<group>"; };
+		6850268B5172274FDBDF6DB9 /* Pods-PositiveGrid-iOS-Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PositiveGrid-iOS-Assignment.release.xcconfig"; path = "Pods/Target Support Files/Pods-PositiveGrid-iOS-Assignment/Pods-PositiveGrid-iOS-Assignment.release.xcconfig"; sourceTree = "<group>"; };
+		B6878C6B04C90F4F9DA55B2A /* Pods_PositiveGrid_iOS_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PositiveGrid_iOS_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9B46C3014B91457DC1EC80D /* Pods-PositiveGrid-iOS-Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PositiveGrid-iOS-Assignment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PositiveGrid-iOS-Assignment/Pods-PositiveGrid-iOS-Assignment.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A5F1B7308F02716E3BF54B1 /* Pods_PositiveGrid_iOS_Assignment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +67,8 @@
 			children = (
 				5196DD222050CF4A002392E2 /* PositiveGrid-iOS-Assignment */,
 				5196DD212050CF4A002392E2 /* Products */,
+				ED5FF43319E532C8187A0A2B /* Pods */,
+				6673889915029EA74299DCA5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +85,40 @@
 			children = (
 				5196DD232050CF4A002392E2 /* AppDelegate.swift */,
 				5196DD252050CF4A002392E2 /* ViewController.swift */,
+				51BADF822052309B00A6F879 /* Toggleable.swift */,
+				516CA6842058DCBE0047E001 /* Draggable.swift */,
+				516CA6802058D5C90047E001 /* Pedal.swift */,
+				516CA68C2058E7FB0047E001 /* Input.swift */,
+				516CA68E2058E9870047E001 /* Output.swift */,
+				516CA6882058E38A0047E001 /* SigPathView.swift */,
+				516CA692205918FF0047E001 /* CGPointExtention.swift */,
+				516CA68A2058E7400047E001 /* SigPathViewComponent.swift */,
+				5151995520653AEE00FAD07C /* FilterService.swift */,
+				51F4FE062050E52B00D7F54E /* examMIDI.mid */,
+				513A764D2058C617001854E9 /* soundFont.sf2 */,
 				5196DD272050CF4A002392E2 /* Main.storyboard */,
 				5196DD2A2050CF4A002392E2 /* Assets.xcassets */,
 				5196DD2C2050CF4A002392E2 /* LaunchScreen.storyboard */,
 				5196DD2F2050CF4A002392E2 /* Info.plist */,
 			);
 			path = "PositiveGrid-iOS-Assignment";
+			sourceTree = "<group>";
+		};
+		6673889915029EA74299DCA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6878C6B04C90F4F9DA55B2A /* Pods_PositiveGrid_iOS_Assignment.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED5FF43319E532C8187A0A2B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C9B46C3014B91457DC1EC80D /* Pods-PositiveGrid-iOS-Assignment.debug.xcconfig */,
+				6850268B5172274FDBDF6DB9 /* Pods-PositiveGrid-iOS-Assignment.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +128,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5196DD322050CF4A002392E2 /* Build configuration list for PBXNativeTarget "PositiveGrid-iOS-Assignment" */;
 			buildPhases = (
+				256FE9979FB50B3E593130C5 /* [CP] Check Pods Manifest.lock */,
 				5196DD1C2050CF4A002392E2 /* Sources */,
 				5196DD1D2050CF4A002392E2 /* Frameworks */,
 				5196DD1E2050CF4A002392E2 /* Resources */,
+				BD0C6A450C28132529104359 /* [CP] Embed Pods Frameworks */,
+				EB3A31D019F76B87A6121D37 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,19 +185,78 @@
 			files = (
 				5196DD2E2050CF4A002392E2 /* LaunchScreen.storyboard in Resources */,
 				5196DD2B2050CF4A002392E2 /* Assets.xcassets in Resources */,
+				51F4FE072050E52B00D7F54E /* examMIDI.mid in Resources */,
 				5196DD292050CF4A002392E2 /* Main.storyboard in Resources */,
+				513A764E2058C617001854E9 /* soundFont.sf2 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		256FE9979FB50B3E593130C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BD0C6A450C28132529104359 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PositiveGrid-iOS-Assignment/Pods-PositiveGrid-iOS-Assignment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB3A31D019F76B87A6121D37 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PositiveGrid-iOS-Assignment/Pods-PositiveGrid-iOS-Assignment-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5196DD1C2050CF4A002392E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				516CA6812058D5C90047E001 /* Pedal.swift in Sources */,
 				5196DD262050CF4A002392E2 /* ViewController.swift in Sources */,
+				516CA6852058DCBE0047E001 /* Draggable.swift in Sources */,
+				5151995620653AEE00FAD07C /* FilterService.swift in Sources */,
+				516CA68B2058E7400047E001 /* SigPathViewComponent.swift in Sources */,
+				516CA68F2058E9870047E001 /* Output.swift in Sources */,
+				516CA6892058E38A0047E001 /* SigPathView.swift in Sources */,
+				516CA68D2058E7FB0047E001 /* Input.swift in Sources */,
+				51BADF832052309B00A6F879 /* Toggleable.swift in Sources */,
 				5196DD242050CF4A002392E2 /* AppDelegate.swift in Sources */,
+				516CA693205918FF0047E001 /* CGPointExtention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +391,7 @@
 		};
 		5196DD332050CF4A002392E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9B46C3014B91457DC1EC80D /* Pods-PositiveGrid-iOS-Assignment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +407,7 @@
 		};
 		5196DD342050CF4A002392E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6850268B5172274FDBDF6DB9 /* Pods-PositiveGrid-iOS-Assignment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
